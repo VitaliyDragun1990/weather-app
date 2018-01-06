@@ -1,0 +1,17 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "Simple weather application built on top of node.js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vitaly Dragun",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.13.1",
+    "nodemon": "^1.14.7",
+    "request": "^2.73.0",
+    "yargs": "^4.8.1"
+  }
+}
