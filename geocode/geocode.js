@@ -1,5 +1,7 @@
 const request = require('request');
 
+/***************** DEFINE FUNCTION RETURNING ADDRESS WITH LAT & LONG ****************/
+
 const geocodeAddress = (address, callback) => {
     let encodedAddress = encodeURIComponent(address);
     let apiKey = 'AIzaSyBe7Zrmmh3sAJiGAtZYuYcTwOTAQZkm-Fw';

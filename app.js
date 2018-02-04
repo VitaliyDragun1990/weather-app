@@ -2,7 +2,10 @@ const yargs = require('yargs');
 const geocode = require('./geocode/geocode');
 const weather = require('./weather/weather');
 
-// setup yargs to work with command line input from the user
+/****************************************** CALLBACK VERSION ******************************************************/
+
+/*************SETUP YARGS TO WORK WITH COMMAND LINE INPUT *********/
+
 const argv = yargs
     .options({
         a: {
@@ -16,11 +19,16 @@ const argv = yargs
     .alias('h', 'help')
     .argv;
 
+/***************** HANDLE USER INPUT AND DISPLAY WEATHER *************/
+
+// Find given address and it's latitude and longitude
 geocode.geocodeAddress(argv.address, (errorMessage, results) => {
     if (errorMessage) {
         console.log(errorMessage);
     } else {
         console.log(results.address);
+
+        // if address found, get weather for it
         weather.getWeather(results.latitude, results.longitude, (errorMessage, weatherResults) => {
             if (errorMessage) {
                 console.log(error);
